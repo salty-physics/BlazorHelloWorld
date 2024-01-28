@@ -1,0 +1,12 @@
+﻿@page "/DataBinding"
+@rendermode InteractiveServer
+
+<h3>DataBinding</h3>
+
+<input @bind="text" />
+
+<button @onclick="() => text = string.Empty">kasuj</button>
+
+@code {
+     string text = "asd";
+}

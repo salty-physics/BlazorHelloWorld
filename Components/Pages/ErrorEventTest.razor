@@ -1,0 +1,23 @@
+﻿@page "/ErrorEventTest"
+@rendermode InteractiveServer
+
+<h3>ErrorEventTest</h3>
+
+<p>@trescInputa</p>
+
+<input @onchange="inputChanged" />
+
+@code {
+    private string trescInputa = "";
+
+    void inputChanged(ChangeEventArgs e)
+    {
+        if (e.Value == null)
+        {
+            trescInputa = "";
+            return;
+        }
+
+        trescInputa = (string)e.Value;
+    }
+}
