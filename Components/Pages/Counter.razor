@@ -12,8 +12,11 @@
 @code {
     private int currentCount = 0;
 
+    [Parameter]
+    public int IleDodac { get; set; } = 2;
+
     private void IncrementCount()
     {
-        currentCount++;
+        currentCount += IleDodac;
     }
 }
