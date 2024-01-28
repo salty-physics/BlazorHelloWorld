@@ -1,4 +1,4 @@
-﻿namespace DataInteract.Model
+﻿namespace DataInteractShared
 {
     public class PizzaSpecial
     {
