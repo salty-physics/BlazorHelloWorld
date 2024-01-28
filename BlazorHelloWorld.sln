@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorHelloWorld", "BlazorH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataInteract", "DataInteract\DataInteract.csproj", "{2F4BABBE-04CF-4D63-9C62-06BAC8DA3DCA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingPizza", "BlazingPizza\BlazingPizza.csproj", "{D13917FD-2169-4184-BED1-C6C09AC83CFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2F4BABBE-04CF-4D63-9C62-06BAC8DA3DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F4BABBE-04CF-4D63-9C62-06BAC8DA3DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F4BABBE-04CF-4D63-9C62-06BAC8DA3DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D13917FD-2169-4184-BED1-C6C09AC83CFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D13917FD-2169-4184-BED1-C6C09AC83CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D13917FD-2169-4184-BED1-C6C09AC83CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D13917FD-2169-4184-BED1-C6C09AC83CFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
