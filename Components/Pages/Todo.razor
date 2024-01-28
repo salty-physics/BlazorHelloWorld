@@ -1,0 +1,46 @@
+﻿@page "/todo"
+@using BlazorHelloWorld.Model
+@rendermode InteractiveServer
+
+<h3>Todo</h3>
+
+<p>Dodaj zadanie</p>
+<input @bind="trescNowegoZadania" />
+<button @onclick="DodajZadanie">Dodaj</button>
+
+@if (listaZadan.Count > 0)
+{
+    <br />
+    <p>Aktualna lista zadan 
+        (@(listaZadan.Count(x => !x.Zakonczone)) niezakonczone)
+    </p>
+
+    @foreach (var zadanie in listaZadan)
+    {
+        <input @bind="zadanie.Tresc" />
+        <input type="checkbox" @bind="zadanie.Zakonczone" />
+        <br />
+    }
+
+} else
+{
+    <p>Brak zadan</p>
+}
+
+
+@code {
+    List<Zadanie> listaZadan = new();
+    string trescNowegoZadania = "";
+
+    void DodajZadanie()
+    {
+        if (string.IsNullOrEmpty(trescNowegoZadania)) return;
+
+        listaZadan.Add(new Zadanie()
+            {
+                Tresc = trescNowegoZadania
+            });
+
+        trescNowegoZadania = string.Empty;           
+    }
+}
