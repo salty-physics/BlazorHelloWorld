@@ -1,0 +1,6 @@
+@DataInteractApi_HostAddress = http://localhost:5191
+
+GET {{DataInteractApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,37 @@
+﻿@page "/"
+@using DataInteract.Model
+@using DataInteract.Services
+@using DataInteractShared
+@inject ApiClientService ApiClientSvc
+
+<div class="main">
+  <h1>Pizzowa strona</h1>
+    <p>@opis</p>
+  <ul class="pizza-cards">
+    @if (specials != null)
+    {
+      @foreach (var special in specials)
+      {
+        <li style="background-image: url('@special.ImageUrl')">
+          <div class="pizza-info">
+              <span class="title">@special.Name</span>
+                  @special.Description
+                <span class="price">@special.GetFormattedBasePrice()</span>
+          </div>
+        </li>
+      }
+    }
+  </ul>
+</div>
+
+
+@code {
+    private string opis = "Strona o pizzy  - tak bylo w tutorialu a ja nie bede wymyslac";
+
+    List<PizzaSpecial> specials = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        specials = await ApiClientSvc.DajPizzaSpecials();
+    }
+}
