@@ -9,6 +9,21 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
+@if (currentCount > 10)
+{
+    <p>Mamy liczbe ponad 10!</p>
+}
+<br />
+Ponizszy wpis bedzie tyle razy co counter:
+
+@if (currentCount > 0)
+{
+    for (int a = 1; a <= currentCount; a++)
+    {
+        <p>Wpis numer @a</p>
+    }
+}
+
 @code {
     private int currentCount = 0;
 
