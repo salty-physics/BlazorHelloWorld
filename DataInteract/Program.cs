@@ -8,6 +8,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 builder.Services.AddSingleton<PizzaService>();
+builder.Services.AddHttpClient<ApiClientService>();
 
 var app = builder.Build();
 

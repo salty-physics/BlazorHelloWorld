@@ -2,7 +2,7 @@
 @using DataInteract.Model
 @using DataInteract.Services
 @using DataInteractShared
-@inject PizzaService PizzaSvc
+@inject ApiClientService ApiClientSvc
 
 <div class="main">
   <h1>Pizzowa strona</h1>
@@ -30,8 +30,8 @@
 
     List<PizzaSpecial> specials = new();
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        specials = PizzaSvc._pizzaSpecials;
+        specials = await ApiClientSvc.DajPizzaSpecials();
     }
 }
