@@ -7,7 +7,9 @@
 
 <p role="status">Current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary" @onclick="IncrementCount">Dodaj zwyczajnie</button>
+
+<button class="btn btn-primary" @onclick="() => currentCount++">Dodaj 1 przez lambde</button>
 
 @if (currentCount > 10)
 {
