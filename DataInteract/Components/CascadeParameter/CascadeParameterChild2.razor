@@ -1,0 +1,9 @@
+﻿@using DataInteract.Model
+<h3>CascadeParameterChild2</h3>
+
+<p1>Przekazane do child2: @Przekazane.liczba, @Przekazane.Parametr</p1>
+
+@code {
+    [CascadingParameter]
+    CascadeParameterModel Przekazane { get; set; }
+}

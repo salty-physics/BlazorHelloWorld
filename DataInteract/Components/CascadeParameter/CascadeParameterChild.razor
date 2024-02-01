@@ -1,0 +1,11 @@
+﻿<h3>CascadeParameterChild</h3>
+<br />
+<h3>Przekazana nazwa: @Nazwa</h3>
+
+<CascadeParameterChild2></CascadeParameterChild2>
+
+
+@code {
+    [CascadingParameter(Name = "NazwaName")]
+    string Nazwa { get; set; }
+}
