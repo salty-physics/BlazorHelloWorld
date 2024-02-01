@@ -1,13 +1,13 @@
-﻿using DataInteract.Model;
+﻿using DataInteractShared;
 
 namespace DataInteract.Services
 {
     public class PizzaService
     {
 
-        public async Task<Pizza[]> DajPizzeAsync()
+        public async Task<PizzaSpecial[]> DajPizzeAsync()
         {
-            return [new Pizza()];
+            return [new PizzaSpecial()];
         }
     }
 }
