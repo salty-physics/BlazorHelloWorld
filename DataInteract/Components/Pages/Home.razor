@@ -3,6 +3,8 @@
 @using DataInteract.Services
 @using DataInteractShared
 @inject ApiClientService ApiClientSvc
+@rendermode InteractiveServer
+
 
 <div class="main">
   <h1>Pizzowa strona</h1>
@@ -12,7 +14,7 @@
     {
       @foreach (var special in specials)
       {
-        <li style="background-image: url('@special.ImageUrl')">
+        <li @onclick="@(() => ShowConfigurePizzaDialog(special))" style="background-image: url('@special.ImageUrl')">
           <div class="pizza-info">
               <span class="title">@special.Name</span>
                   @special.Description
@@ -24,14 +26,34 @@
   </ul>
 </div>
 
+@if (showingConfigureDialog)
+{
+    <ConfigurePizzaDialog Pizza="configuringPizza" />
+}
+
 
 @code {
     private string opis = "Strona o pizzy  - tak bylo w tutorialu a ja nie bede wymyslac";
 
     List<PizzaSpecial> specials = new();
 
+    Pizza configuringPizza;
+    bool showingConfigureDialog;
+
     protected override async Task OnInitializedAsync()
     {
         specials = await ApiClientSvc.DajPizzaSpecials();
+    }
+
+    void ShowConfigurePizzaDialog(PizzaSpecial special)
+    {
+        configuringPizza = new Pizza()
+            {
+                Special = special,
+                SpecialId = special.Id,
+                Size = Pizza.DefaultSize
+            };
+
+        showingConfigureDialog = true;
     }
 }
