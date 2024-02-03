@@ -7,10 +7,15 @@
     <input @bind-value="customerEmail" @bind-value:event="oninput" />
     <br />
     W zmiennej jest : @customerEmail
+    <br />
+    <br />
+    <br />
+    Biding daty z formatowaniem:
+    <input @bind="birthdate" @bind:format="dd-MM-yyyy" />
 </p>
 
 
 @code {
     private string customerEmail = "john.doe@contoso.com";
-
+    private DateTime birthdate { get; set; } = new(2000, 1, 1);
 }
