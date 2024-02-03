@@ -35,5 +35,10 @@ namespace DataInteract.Services
 
             ShowingConfigureDialog = false;
         }
+
+        public void RemoveConfiguredPizza(Pizza pizza)
+        {
+            Order.Pizzas.Remove(pizza);
+        }
     }
 }
