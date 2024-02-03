@@ -1,0 +1,13 @@
+﻿@page "/parameter"
+
+<h3>NewPizza</h3>
+<br />
+<h1>@PizzaDescription</h1>
+
+@code {
+    [Parameter]
+    public string PizzaName { get; set; }
+
+    [Parameter]
+    public string PizzaDescription { get; set; } = "domyslny opis bez parametru";
+}

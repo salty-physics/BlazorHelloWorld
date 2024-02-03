@@ -1,5 +1,8 @@
 ﻿namespace DataInteractShared
 {
+    /// <summary>
+    /// Pizza co jest na glownej stronie
+    /// </summary>
     public class PizzaSpecial
     {
         public int Id { get; set; }

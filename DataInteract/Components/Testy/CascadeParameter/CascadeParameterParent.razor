@@ -1,0 +1,19 @@
+﻿@page "/cascade"
+@using DataInteract.Model
+
+<p3>CascadeParameterParent</p3>
+<br />
+<CascadingValue Name="NazwaName" Value="@Nazwa">
+    <CascadingValue Value="@Parametr">
+    <CascadeParameterChild></CascadeParameterChild>
+    </CascadingValue>
+</CascadingValue>
+
+    @code {
+        string Nazwa = "przekazana nazwa string";
+        CascadeParameterModel Parametr = new()
+        {
+            liczba = 17,
+            Parametr = "test 17"
+        };
+}
