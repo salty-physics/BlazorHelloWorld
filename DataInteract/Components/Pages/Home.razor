@@ -2,7 +2,11 @@
 @using DataInteract.Model
 @using DataInteract.Services
 @using DataInteractShared
+
 @inject ApiClientService ApiClientSvc
+@inject NavigationManager NavigationManager
+@inject OrderStateService OrderState
+
 @rendermode InteractiveServer
 
 
@@ -14,7 +18,7 @@
     {
       @foreach (var special in specials)
       {
-        <li @onclick="@(() => ShowConfigurePizzaDialog(special))" style="background-image: url('@special.ImageUrl')">
+        <li @onclick="@(() => OrderState.ShowConfigurePizzaDialog(special))" style="background-image: url('@special.ImageUrl')">
           <div class="pizza-info">
               <span class="title">@special.Name</span>
                   @special.Description
@@ -26,9 +30,9 @@
   </ul>
 </div>
 
-@if (showingConfigureDialog)
+@if (OrderState.ShowingConfigureDialog)
 {
-    <ConfigurePizzaDialog Pizza="configuringPizza" />
+    <ConfigurePizzaDialog Pizza="OrderState.ConfiguringPizza" />
 }
 
 
@@ -37,23 +41,10 @@
 
     List<PizzaSpecial> specials = new();
 
-    Pizza configuringPizza;
-    bool showingConfigureDialog;
-
     protected override async Task OnInitializedAsync()
     {
         specials = await ApiClientSvc.DajPizzaSpecials();
     }
 
-    void ShowConfigurePizzaDialog(PizzaSpecial special)
-    {
-        configuringPizza = new Pizza()
-            {
-                Special = special,
-                SpecialId = special.Id,
-                Size = Pizza.DefaultSize
-            };
 
-        showingConfigureDialog = true;
-    }
 }
