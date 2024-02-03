@@ -5,7 +5,7 @@ namespace DataInteract.Services
     public class OrderStateService
     {
         public bool ShowingConfigureDialog { get; private set; }
-        public Pizza ConfiguringPizza { get; private set; }
+        public Pizza? ConfiguringPizza { get; private set; }
         public Order Order { get; private set; } = new Order();
 
         public void ShowConfigurePizzaDialog(PizzaSpecial special)
